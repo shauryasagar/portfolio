@@ -19,7 +19,7 @@ body {
   background: #fff;
 }
 .fh5co-cover{
-  background-image: url(../images/photo_2022-11-29_20-15-05.jpg);
+  background-image: url(../images/photo_2022-11-29_20-15-05.webp);
 }
 #page {
   position: relative;
@@ -459,7 +459,7 @@ h1, h2, h3, h4, h5, h6, figure {
     margin-left: -64px;
   }
   .fh5co-cover{
-    background-image: url(../images/mobile_2022-11-29_20-15-05.jpg);
+    background-image: url(../images/mobile_2022-11-29_20-15-05.webp);
   }
 }
 @media screen and (max-width: 768px) {
