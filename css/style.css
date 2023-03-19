@@ -10,98 +10,45 @@ body {
   font-family: "Space Mono", Arial, serif;
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.7;
+  position: fixed line-height: 1.7;
   color: #d3d3d3;
-  background: #fff
 }
 
-.fh5co-cover {
+.main-cover {
   background-image: url(../images/photo_2022-11-29_20-15-05.webp)
 }
-.fh5co-Cover-about {
+
+.main-Cover-about {
   background-image: url(https://images.unsplash.com/photo-1544656376-ffe19d4b7353?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80);
 }
 
-.fh5co-Cover-about{
-  
+.video-container {
+  height: 20%;
+  width: 100%;
+}
+
+.video-container video {
+  position: absolute;
+  z-index: 0;
+}
+
+/* Just styling the content of the div, the *magic* in the previous rules */
+.video-container .main-Cover-about {
+  z-index: 1;
+  position: relative;
+}
+
+.main-Cover-about {
+
   background-attachment: fixed;
   position: relative;
   width: 100%
 }
-.glitch {
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  position: relative;
 
-  text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
-    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
-    0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
 
-  animation: glitch 500ms infinite;
-}
-
-.glitch span {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.glitch span:first-child {
-  animation: glitch 650ms infinite;
-  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-  transform: translate(-0.025em, -0.0125em);
-  /* color: green; */
-  opacity: 0.8;
-}
-
-.glitch span:last-child {
-  animation: glitch 375ms infinite;
-  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
-  transform: translate(0.0125em, 0.025em);
-  /* color: red; */
-  opacity: 0.8;
-}
-
-/* https://web.dev/prefers-reduced-motion/#(bonus)-forcing-reduced-motion-on-all-websites */
-
-@keyframes glitch {
-  0% {
-    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
-      -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
-      -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-  14% {
-    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
-      -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
-      -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-  15% {
-    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
-      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
-      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-  49% {
-    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
-      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
-      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-  50% {
-    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
-      0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-  99% {
-    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
-      0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-  100% {
-    text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
-      -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
-      -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-}
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   ::before,
   ::after {
@@ -119,10 +66,23 @@ body {
   position: relative;
   overflow-x: hidden;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   -webkit-transition: .5s;
   -o-transition: .5s;
   transition: .5s
+}
+
+html {
+  overflow-y: hidden;
+}
+
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #FF0000;
 }
 
 a {
@@ -166,8 +126,8 @@ h6 {
   background: rgba(17, 17, 17, .705)
 }
 
-#fh5co-header,
-.fh5co-cover {
+#main-header,
+.main-cover {
   background-color: transparent;
   background-size: cover;
   background-attachment: fixed;
@@ -176,8 +136,8 @@ h6 {
 }
 
 
-#fh5co-header .overlay,
-.fh5co-cover .overlay {
+#main-header .overlay,
+.main-cover .overlay {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -185,54 +145,51 @@ h6 {
   right: 0;
   background: rgb(14 14 14 / 90%)
 }
-#fh5co-header .display-t,
-.fh5co-cover .display-t {
+
+#main-header .display-t,
+.main-cover .display-t {
   width: 100%;
   display: table
 }
 
-#fh5co-header .display-tc,
-.fh5co-cover .display-tc {
+#main-header .display-tc,
+.main-cover .display-tc {
   display: table-cell;
   vertical-align: middle;
   height: 1000px
 }
-.hey{
+
+.hey {
   margin: 0px 0px 0px 0px;
 }
-#fh5co-header .display-tc h1,
-#fh5co-header .display-tc h2,
-#fh5co-header .display-tc h3,
-.fh5co-cover .display-tc h1,
-.fh5co-cover .display-tc h2,
-.fh5co-cover .display-tc h3 {
+
+#main-header .display-tc h1,
+#main-header .display-tc h2,
+#main-header .display-tc h3,
+.main-cover .display-tc h1,
+.main-cover .display-tc h2,
+.main-cover .display-tc h3 {
   margin: 0;
   padding: 0;
   color: #fff
 }
 
-#fh5co-header .display-tc h1,
-.fh5co-cover .display-tc h1 {
-  font-family: "Kaushan Script", cursive;
+#main-header .display-tc h1,
+.main-cover .display-tc h1 {
   margin-bottom: 30px;
-  font-size: 50px;
+  font-size: 44px;
   line-height: 1.3;
   font-weight: 300;
-  -webkit-transform: rotate(-5deg);
-  -moz-transform: rotate(-5deg);
-  -ms-transform: rotate(-5deg);
-  -o-transform: rotate(-5deg);
-  transform: rotate(-5deg)
 }
 
-#fh5co-header .display-tc h1 span,
-.fh5co-cover .display-tc h1 span {
+#main-header .display-tc h1 span,
+.main-cover .display-tc h1 span {
   padding: 4px 15px;
   position: relative
 }
 
-#fh5co-header .display-tc h1 span:before,
-.fh5co-cover .display-tc h1 span:before {
+#main-header .display-tc h1 span:before,
+.main-cover .display-tc h1 span:before {
   position: absolute;
   top: 40px;
   left: 0;
@@ -243,8 +200,8 @@ h6 {
   margin-left: -30px
 }
 
-#fh5co-header .display-tc h1 span:after,
-.fh5co-cover .display-tc h1 span:after {
+#main-header .display-tc h1 span:after,
+.main-cover .display-tc h1 span:after {
   position: absolute;
   top: 40px;
   right: 0;
@@ -257,54 +214,54 @@ h6 {
 
 @media screen and (max-width:768px) {
 
-  #fh5co-header .display-tc h1,
-  .fh5co-cover .display-tc h1 {
-      font-size: 34px
+  #main-header .display-tc h1,
+  .main-cover .display-tc h1 {
+    font-size: 34px
   }
 
-  .fh5co-cover {
-      background-image: url(../images/cropped_2022-11-29_20-15-05.jpg)
+  .main-cover {
+    background-image: url(../images/cropped_2022-11-29_20-15-05.jpg)
   }
 
-  #fh5co-header .display-tc h1 span:before,
-  .fh5co-cover .display-tc h1 span:before {
-      top: 28px;
-      width: 20px;
-      height: 3px;
-      margin-left: -15px
+  #main-header .display-tc h1 span:before,
+  .main-cover .display-tc h1 span:before {
+    top: 28px;
+    width: 20px;
+    height: 3px;
+    margin-left: -15px
   }
 
-  #fh5co-header .display-tc h1 span:after,
-  .fh5co-cover .display-tc h1 span:after {
-      top: 28px;
-      width: 20px;
-      height: 3px;
-      margin-right: -15px
+  #main-header .display-tc h1 span:after,
+  .main-cover .display-tc h1 span:after {
+    top: 28px;
+    width: 20px;
+    height: 3px;
+    margin-right: -15px
   }
 }
 
-#fh5co-header .display-tc h2,
-.fh5co-cover .display-tc h2 {
+#main-header .display-tc h2,
+.main-cover .display-tc h2 {
   font-size: 20px;
   line-height: 1.5;
   margin-bottom: 30px
 }
 
-#fh5co-header .display-tc h3,
-.fh5co-cover .display-tc h3 {
+#main-header .display-tc h3,
+.main-cover .display-tc h3 {
   font-size: 16px
 }
 
 @media screen and (max-width:768px) {
 
-  #fh5co-header .display-tc h3,
-  .fh5co-cover .display-tc h3 {
-      font-size: 14px
+  #main-header .display-tc h3,
+  .main-cover .display-tc h3 {
+    font-size: 14px
   }
 }
 
-#fh5co-header .display-tc .profile-thumb,
-.fh5co-cover .display-tc .profile-thumb {
+#main-header .display-tc .profile-thumb,
+.main-cover .display-tc .profile-thumb {
   background-size: cover !important;
   background-position: center center;
   background-repeat: no-repeat;
@@ -319,25 +276,22 @@ h6 {
   border-radius: 50%
 }
 
-#fh5co-header .display-tc .fh5co-social-icons li a,
-.fh5co-cover .display-tc .fh5co-social-icons li a {
+#main-header .display-tc .main-social-icons li a,
+.main-cover .display-tc .main-social-icons li a {
   color: #fff
 }
 
-#fh5co-header .display-tc .fh5co-social-icons li a i,
-.fh5co-cover .display-tc .fh5co-social-icons li a i {
+#main-header .display-tc .main-social-icons li a i,
+.main-cover .display-tc .main-social-icons li a i {
   font-size: 30px
 }
 
-#fh5co-about {
-  padding: 7em 0;
+#main-about {
   clear: both
 }
 
 @media screen and (max-width:768px) {
-  #fh5co-about {
-      padding: 3em 0
-  }
+  #main-about {}
 }
 
 .info {
@@ -349,7 +303,7 @@ h6 {
 
 @media screen and (max-width:768px) {
   .info {
-      margin-bottom: 3em
+    margin-bottom: 3em
   }
 }
 
@@ -374,16 +328,18 @@ h6 {
 
 .info li .second-block {
   width: 60%;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
   display: inline-block;
   color: rgba(255, 255, 255, 0.8)
 }
 
-.fh5co-social-icons {
+.main-social-icons {
   margin: 0;
   padding: 0
 }
 
-.fh5co-social-icons li {
+.main-social-icons li {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -392,7 +348,7 @@ h6 {
   zoom: 1
 }
 
-.fh5co-social-icons li a {
+.main-social-icons li a {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
@@ -400,16 +356,16 @@ h6 {
   padding-right: 10px
 }
 
-.fh5co-social-icons li a i {
+.main-social-icons li a i {
   font-size: 20px
 }
 
-#fh5co-about .fh5co-social-icons {
+#main-about .main-social-icons {
   margin: 0;
   padding: 0
 }
 
-#fh5co-about .fh5co-social-icons li {
+#main-about .main-social-icons li {
   padding: 0;
   list-style: none;
   display: -moz-inline-stack;
@@ -417,7 +373,7 @@ h6 {
   zoom: 1
 }
 
-#fh5co-about .fh5co-social-icons li a {
+#main-about .main-social-icons li a {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
@@ -430,28 +386,29 @@ h6 {
   border-radius: 2px
 }
 
-#fh5co-about .fh5co-social-icons li a i {
+#main-about .main-social-icons li a i {
   font-size: 20px
 }
 
-.fh5co-heading {
+.main-heading {
   margin-bottom: 5em
 }
 
-.fh5co-heading h2 {
+.main-heading h2 {
+  padding-top: 63px;
   font-size: 40px;
   margin-bottom: 20px;
   line-height: 1.5;
   color: rgb(255, 255, 255)
 }
 
-.fh5co-heading p {
+.main-heading p {
   font-size: 18px;
   line-height: 1.5;
   color: #828282
 }
 
-.fh5co-heading span {
+.main-heading span {
   display: block;
   margin-bottom: 10px;
   text-transform: uppercase;
@@ -460,8 +417,13 @@ h6 {
 }
 
 @media screen and (max-width:480px) {
-  .fh5co-cover {
-      background-image: url(../images/mobile_2022-11-29_20-15-05.webp)
+  .main-cover {
+    background-image: url(../images/mobile_2022-11-29_20-15-05.webp)
+  }
+
+  .playlist {
+    padding-left: 20% !important;
+    padding-top: 10% !important;
   }
 }
 
@@ -510,4 +472,105 @@ h6 {
 
 .js .animate-box {
   opacity: 0
+}
+
+.glitch {
+  font-size: 6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+
+  text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+    0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+
+  animation: glitch 500ms infinite;
+}
+
+.glitch span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.glitch span:first-child {
+  animation: glitch 650ms infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-0.025em, -0.0125em);
+  /* color: green; */
+  opacity: 0.8;
+}
+
+.glitch span:last-child {
+  animation: glitch 375ms infinite;
+  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  transform: translate(0.0125em, 0.025em);
+  /* color: red; */
+  opacity: 0.8;
+}
+
+/* https://web.dev/prefers-reduced-motion/#(bonus)-forcing-reduced-motion-on-all-websites */
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+
+  14% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+
+  15% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+
+  49% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+      0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+      0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+
+  100% {
+    text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
+
+.Heythere {
+  margin-top: -25px;
+  margin-bottom: 40px;
+  font-family: "Kaushan Script", cursive;
+  font-size: 44px;
 }
