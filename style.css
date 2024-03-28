@@ -190,8 +190,8 @@ ul li:nth-child(13) {
 
 .light2 {
   color: white;
-  text-shadow: 0 0 10px white,
-    0 0 20px white;
+  text-shadow: 0 0 50px white,
+    0 0 13px grey;
 }
 
 .con_button:hover {
