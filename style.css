@@ -9,12 +9,49 @@ body {
   background-image: url(images/background.webp)
 }
 
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh; 
+  background-color: #000; 
+  z-index: 9999;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.loader {
+  width: 40px;  
+  height: 40px;
+  background-color: #ffffff; 
+  border-radius: 50%;
+  animation: pulse 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  to { 
+      opacity: 0.4; 
+      transform: scale(1.5); 
+  }
+}
+
+#preloader.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out; 
+}
+
+#preloader.fade-out .loader {
+  display: none; 
+}
+
 .main-Cover-about {
   background-image: url(https://images.unsplash.com/photo-1544656376-ffe19d4b7353?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80);
 }
 
 .grooving {
-  font-family: 'Space Mono' ;
+  font-family: 'Space Mono';
   text-shadow: 0 0 3px white, 0 0 1px white;
   font-size: 16px;
 }
@@ -46,18 +83,21 @@ body {
 .box {
   box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.7)
 }
-#trackart{
+
+#trackart {
   animation: animName 4s linear infinite
 }
 
 @keyframes animName {
-  0%{
-     transform: rotate(0deg);
-    }
- 100%{
-     transform: rotate(360deg);
-    }
- }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 body {
   justify-content: center;
   align-items: center;
@@ -98,17 +138,60 @@ body {
 }
 
 @keyframes lighting {
-  0%   { color: rgba(0, 120, 0, 0.7); text-shadow: 0 0 5px rgba(0, 150, 0, 0.8); }
-  10%  { color: rgba(120, 180, 0, 0.8); text-shadow: 0 0 8px rgba(150, 210, 0, 0.9); } 
-  20%  { color: rgba(255, 180, 0, 0.9); text-shadow: 0 0 10px rgba(255, 210, 0, 1); }
-  30%  { color: rgba(180, 255, 0, 0.95); text-shadow: 0 0 12px rgba(210, 255, 0, 1); }
-  40%  { color: rgba(0, 255, 120, 0.9); text-shadow: 0 0 10px rgba(0, 255, 150, 0.9); }
-  50%  { color: rgba(0, 160, 255, 0.8); text-shadow: 0 0 8px rgba(0, 190, 255, 0.9); }
-  60%  { color: rgba(120, 0, 220, 0.8); text-shadow: 0 0 8px rgba(150, 0, 255, 0.9); }
-  70%  { color: rgba(255, 0, 180, 0.9); text-shadow: 0 0 10px rgba(255, 0, 210, 1); }
-  80%  { color: rgba(255, 100, 0, 0.95); text-shadow: 0 0 10px rgba(255, 130, 0, 1); }
-  90%  { color: rgba(180, 0, 120, 0.8); text-shadow: 0 0 8px rgba(210, 0, 150, 0.9); }
-  100% { color: rgba(0, 63, 200, 0.7); text-shadow: 0 0 5px rgba(55, 0, 255, 0.8); } 
+  0% {
+    color: rgba(0, 120, 0, 0.7);
+    text-shadow: 0 0 5px rgba(0, 150, 0, 0.8);
+  }
+
+  10% {
+    color: rgba(120, 180, 0, 0.8);
+    text-shadow: 0 0 8px rgba(150, 210, 0, 0.9);
+  }
+
+  20% {
+    color: rgba(255, 180, 0, 0.9);
+    text-shadow: 0 0 10px rgba(255, 210, 0, 1);
+  }
+
+  30% {
+    color: rgba(180, 255, 0, 0.95);
+    text-shadow: 0 0 12px rgba(210, 255, 0, 1);
+  }
+
+  40% {
+    color: rgba(0, 255, 120, 0.9);
+    text-shadow: 0 0 10px rgba(0, 255, 150, 0.9);
+  }
+
+  50% {
+    color: rgba(0, 160, 255, 0.8);
+    text-shadow: 0 0 8px rgba(0, 190, 255, 0.9);
+  }
+
+  60% {
+    color: rgba(120, 0, 220, 0.8);
+    text-shadow: 0 0 8px rgba(150, 0, 255, 0.9);
+  }
+
+  70% {
+    color: rgba(255, 0, 180, 0.9);
+    text-shadow: 0 0 10px rgba(255, 0, 210, 1);
+  }
+
+  80% {
+    color: rgba(255, 100, 0, 0.95);
+    text-shadow: 0 0 10px rgba(255, 130, 0, 1);
+  }
+
+  90% {
+    color: rgba(180, 0, 120, 0.8);
+    text-shadow: 0 0 8px rgba(210, 0, 150, 0.9);
+  }
+
+  100% {
+    color: rgba(0, 63, 200, 0.7);
+    text-shadow: 0 0 5px rgba(55, 0, 255, 0.8);
+  }
 }
 
 
@@ -167,17 +250,49 @@ ul li:nth-child(13) {
 }
 
 @keyframes boxShadowGlow {
-  0%   { box-shadow: 0 0 30px rgba(0, 150, 0, 0.5); } 
-  10%  { box-shadow: 0 0 35px rgba(150, 210, 0, 0.7); }
-  20%  { box-shadow: 0 0 40px rgba(255, 210, 0, 0.9); }
-  30%  { box-shadow: 0 0 45px rgba(210, 255, 0, 0.8); } 
-  40%  { box-shadow: 0 0 40px rgba(0, 255, 150, 0.9); } 
-  50%  { box-shadow: 0 0 35px rgba(0, 190, 255, 0.9); } 
-  60%  { box-shadow: 0 0 35px rgba(150, 0, 255, 0.9); } 
-  70%  { box-shadow: 0 0 40px rgba(255, 0, 210, 1); } 
-  80%  { box-shadow: 0 0 40px rgba(255, 130, 0, 1); } 
-  90%  { box-shadow: 0 0 35px rgba(210, 0, 150, 0.9); } 
-  100% { box-shadow: 0 0 30px rgba(0, 0, 255, 0.5); }   
+  0% {
+    box-shadow: 0 0 30px rgba(0, 150, 0, 0.5);
+  }
+
+  10% {
+    box-shadow: 0 0 35px rgba(150, 210, 0, 0.7);
+  }
+
+  20% {
+    box-shadow: 0 0 40px rgba(255, 210, 0, 0.9);
+  }
+
+  30% {
+    box-shadow: 0 0 45px rgba(210, 255, 0, 0.8);
+  }
+
+  40% {
+    box-shadow: 0 0 40px rgba(0, 255, 150, 0.9);
+  }
+
+  50% {
+    box-shadow: 0 0 35px rgba(0, 190, 255, 0.9);
+  }
+
+  60% {
+    box-shadow: 0 0 35px rgba(150, 0, 255, 0.9);
+  }
+
+  70% {
+    box-shadow: 0 0 40px rgba(255, 0, 210, 1);
+  }
+
+  80% {
+    box-shadow: 0 0 40px rgba(255, 130, 0, 1);
+  }
+
+  90% {
+    box-shadow: 0 0 35px rgba(210, 0, 150, 0.9);
+  }
+
+  100% {
+    box-shadow: 0 0 30px rgba(0, 0, 255, 0.5);
+  }
 }
 
 
@@ -562,16 +677,19 @@ h6 {
     height: 4624px;
   }
 
-  #tracktitle{
+  #tracktitle {
     font-size: 17px;
   }
-  .grooving{
-  text-shadow: 0 0 0px white, 0 0 0px white;
-  font-size: 11px;
+
+  .grooving {
+    text-shadow: 0 0 0px white, 0 0 0px white;
+    font-size: 11px;
   }
-  #trackartist{
+
+  #trackartist {
     font-size: 12px;
   }
+
   .playlist {
     padding-left: 20% !important;
     padding-top: 10% !important;
@@ -678,4 +796,3 @@ h6 {
   font-family: "Kaushan Script", cursive;
   font-size: 44px;
 }
-

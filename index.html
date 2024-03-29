@@ -34,7 +34,13 @@
 </head>
 
 <body>
-
+	<div id="preloader">
+		<div class="loader"></div> 
+	</div>
+	
+	<div id="main-content">
+		</div>
+	
 
 	<div id="page">
 		<header id="main-header" class="main-cover js-fullheight" role="banner" data-stellar-background-ratio="0.5"
@@ -284,6 +290,25 @@
 		};
 		getSetLastFM();
 		setInterval(getSetLastFM, 10 * 100);
+
+
+
+		
+		window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+
+    preloader.addEventListener('transitionend', function() {
+       if (preloader.classList.contains('fade-out')) {
+           preloader.style.display = 'none'; // Hide the preloader completely after fading out
+       }
+    });
+
+    setTimeout(function() {
+        preloader.classList.add('fade-out');  // Start the fade-out of the preloader 
+    }, 3000); // Adjust the delay before fading out if needed
+});
+
+
 
 
 
