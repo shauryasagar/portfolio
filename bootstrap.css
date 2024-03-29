@@ -133,7 +133,7 @@ body {
 }
 
 a {
-    color: #337ab7;
+    color: white;
     text-decoration: none
 }
 
@@ -329,7 +329,7 @@ ul ul {
     position: relative;
     min-height: 1px;
     padding-left: 15px;
-    padding-right: 15px
+    padding-right: 15px;
 }
 
 @media (min-width:992px) {
