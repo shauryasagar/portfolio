@@ -687,6 +687,16 @@ h6 {
     font-size: 11px;
   }
 
+   #main-header .overlay,
+.main-cover .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(14 14 14 / 80%)
+}
+
   #trackartist {
     font-size: 12px;
   }
