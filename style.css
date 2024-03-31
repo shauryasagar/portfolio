@@ -21,7 +21,12 @@ body {
 .nyan-container marquee {
   width: 100%;
 }
-
+html, body {
+  height:100%;
+}
+.main-cover {
+  height:100%;
+}
 
 .main-cover {
   background-image: url('');
@@ -29,6 +34,7 @@ body {
   -webkit-transition: height 1000000s ease;
   -moz-transition: height 1000000s ease;
   -o-transition: height 1000000s ease;
+  transition: background-size 5s ease-in-out;
 }
 
 
@@ -348,7 +354,7 @@ ul li:nth-child(13) {
 #page {
   overflow-x: hidden;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: black;
 }
 
@@ -831,6 +837,6 @@ h6 {
 .Heythere {
   margin-top: -25px;
   margin-bottom: 40px;
-  font-family: "Kaushan Script", cursive;
-  font-size: 44px;
+  font-family: 'Silkscreen', cursive;
+  font-size: 40px;
 }
