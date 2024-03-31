@@ -415,10 +415,6 @@ h6 {
   position: relative;
   width: 100%;
   height: 100vh;
-  transition: height 1000000s ease;
-  -webkit-transition: height 1000000s ease;
-  -moz-transition: height 1000000s ease;
-  -o-transition: height 1000000s ease;
 }
 
 
@@ -702,6 +698,10 @@ h6 {
 @media screen and (max-width:480px) {
   .main-cover {
     background-image: url('');
+  transition: height 1000000s ease;
+  -webkit-transition: height 1000000s ease;
+  -moz-transition: height 1000000s ease;
+  -o-transition: height 1000000s ease;
   }
 
   #tracktitle {
@@ -720,7 +720,7 @@ h6 {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgb(14 14 14 / 80%)
+    background: rgb(14 14 14 / 77%)
   }
 
   #trackartist {
