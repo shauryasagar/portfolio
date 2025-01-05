@@ -52,7 +52,7 @@ var getSetLastFM = function () {
     });
 };
 getSetLastFM();
-setInterval(getSetLastFM, 10 * 100);
+setInterval(getSetLastFM, 30 * 1000);
 
 
 
