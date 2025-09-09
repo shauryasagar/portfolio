@@ -6,7 +6,7 @@ const port = 3000;
 
 require('dotenv').config();
 
-app.use(cors());  // <-- Add this line to allow requests from anywhere
+app.use(cors());
 
 const LASTFM_BASE_URL = "https://ws.audioscrobbler.com/2.0/";
 const USER = process.env.LASTFM_USER;

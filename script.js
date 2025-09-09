@@ -16,7 +16,7 @@ setTimeout(function () {
 var getSetLastFM = function () {
     jQuery.ajax({
         type: "GET",
-        url: "https://api.itsureya.com/lastfm",   // Updated to call internal API
+        url: "https://api.itsureya.com/lastfm",
         dataType: "json",
         success: function (resp) {
             var recentTrack = resp.recenttracks.track[0];
