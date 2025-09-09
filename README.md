@@ -33,7 +33,7 @@ Running on Oracle Clound Instance, https://api.itsureya.com/lastfm
 - Main Background image snaps to different dimension when URL-bar collapses. 
 
 ### Trivia:
-Most time spent centering div.
+Most time spent on centering div.
 
 ---
 <div align="center">
