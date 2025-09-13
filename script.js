@@ -16,7 +16,7 @@ setTimeout(function () {
 var getSetLastFM = function () {
     jQuery.ajax({
         type: "GET",
-        url: "https://api.itsureya.com/lastfm",
+        url: "https://api.itsureya.com/lastfm",   // Updated to call internal API
         dataType: "json",
         success: function (resp) {
             var recentTrack = resp.recenttracks.track[0];
@@ -72,29 +72,29 @@ window.addEventListener('load', function () {
 
 function changeBackground() {
     const desktopImages = [
-        "https://i.postimg.cc/CKkWd41Z/bg1.webp",
-        "https://i.postimg.cc/RhV8s5Tf/bg2.webp",
-        "https://i.postimg.cc/3xPsKqK5/bg3.webp",
-        "https://i.postimg.cc/pTv3jnhs/bg4.webp",
-        "https://i.postimg.cc/JnQv54jM/bg5.webp",
-        // "https://i.postimg.cc/nV0NsrH1/bg6.webp",
-        "https://i.postimg.cc/vTqKCqPK/bg7.webp",
-        "https://i.postimg.cc/65qgCKqx/bg8.webp",
-        "https://i.postimg.cc/5NrG3rQY/bg9.webp",
-        "https://i.postimg.cc/9QqkNByx/bg10.webp",
-        "https://i.postimg.cc/Zq8MJK7p/bg11.webp",
-        "https://i.postimg.cc/MG2LkjDz/bg12.webp",
+        "images/bg/bg1.webp",
+        "images/bg/bg2.webp",
+        "images/bg/bg3.webp",
+        "httpsimages/bgbg4.webp",
+        "images/bg/bg5.webp",
+        // "images/bg/bg6.webp",
+        "images/bg/bg7.webp",
+        "images/bg/bg8.webp",
+        "images/bg/bg9.webp",
+        "images/bg/bg10.webp",
+        "images/bg/bg11.webp",
+        "images/bg/bg12.webp",
     ];
 
     const mobileImages = [
-        "https://i.postimg.cc/cCpH7mQp/mbg1.webp",
-        "https://i.postimg.cc/cLMHYf6z/mbg2.webp",
-        "https://i.postimg.cc/zfzfk3gG/mbg3.webp",
-        "https://i.postimg.cc/j5kC2KCd/mbg4.webp",
-        "https://i.postimg.cc/G3VH1cZX/mbg5.webp",
-        "https://i.postimg.cc/G3VH1cZX/mbg5.webp",
-        "https://i.postimg.cc/VLt5fxwm/mbg6.webp",
-        "https://i.postimg.cc/bwjrsmYb/mbg7.webp",
+        "images/mobile/mbg1.webp",
+        "images/mobile/mbg2.webp",
+        "images/mobile/mbg3.webp",
+        "images/mobile/mbg4.webp",
+        "images/mobile/mbg5.webp",
+        "images/mobile/mbg5.webp",
+        "images/mobile/mbg6.webp",
+        "images/mobile/mbg7.webp",
     ];
 
     const mainCover = document.querySelector(".main-cover");
