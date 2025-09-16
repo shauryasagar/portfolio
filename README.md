@@ -21,8 +21,9 @@ simply run:
 
 ```
 git clone https://github.com/shauryasagar/portfolio
-docker compose up -d --build
+docker compose up -d
 ```
+
 
 ## Last.fm Backend API Container:
 

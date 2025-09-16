@@ -13,8 +13,7 @@ services:
       - portfolio
 
   api:
-    build:
-      context: ./server
+    image: itsureyaa/lastfm-api:latest
     container_name: lastfm-api
     ports:
       - "3000:3000"
