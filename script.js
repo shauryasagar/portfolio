@@ -15,7 +15,7 @@ setTimeout(function () {
 var getSetLastFM = function () {
     jQuery.ajax({
         type: "GET",
-        url: "https://api.itsureya.com/lastfm", // Updated to call internal API
+        url: "https://api.itsureya.com/lastfm",
         dataType: "json",
         success: function (resp) {
             var recentTrack = resp.recenttracks.track[0];
@@ -49,7 +49,7 @@ var getSetLastFM = function () {
 getSetLastFM();
 setInterval(getSetLastFM, 30 * 1000);
 
-window.addEventListener('load', function () {
+window.addEventListener("DOMContentLoaded", function () {
     const preloader = document.getElementById('preloader');
 
     preloader.addEventListener('transitionend', function () {
@@ -60,25 +60,23 @@ window.addEventListener('load', function () {
 
     setTimeout(function () {
         preloader.classList.add('fade-out');
-    }, 3000);
+    }, 1000);
 });
 
-function changeBackground() {
+document.addEventListener('DOMContentLoaded', function() {
     const mainCover = document.querySelector(".main-cover");
     let imageUrl = '';
 
     if (window.matchMedia("(max-width: 480px)").matches) {
-        // Use the server endpoint for mobile images
         imageUrl = "https://cdn.itsureya.com/random/mobile";
     } else {
-        // Use the server endpoint for desktop images
         imageUrl = "https://cdn.itsureya.com/random/desktop";
     }
 
-    mainCover.style.backgroundImage = `url('${imageUrl}')`;
-}
-
-window.onload = changeBackground;
+    if (mainCover) {
+        mainCover.style.backgroundImage = `url('${imageUrl}')`;
+    }
+});
 
 function handleBackgroundVideo() {
     const videoElement = document.querySelector("video");
