@@ -1,6 +1,6 @@
 # Portfolio
 <div align="center">
-  <img src="https://cdn.itsureya.com/images/favicon.ico" alt="Icon">
+  <img src="https://cdn.itsureya.com/images/icon.ico" alt="Icon">
 </div>
 <p align="center"><b>Since 2022 and continuing...</b></p>
 
