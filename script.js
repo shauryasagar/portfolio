@@ -35,7 +35,7 @@ var getSetLastFM = function () {
             .html(artistFormatted)
             .attr("title", "Artist : " + artistFormatted);
 
-            $("img#trackart").attr("src", recentTrack.image[2]["#text"]);
+            $("img#trackart").attr("src", recentTrack.image[1]["#text"]);
         },
         error: function () {
             jQuery("span#tracktitle").html("The sounds of silence");
