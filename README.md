@@ -12,7 +12,7 @@
 ## Instances:
 
 - Oracle Cloud Instance: https://itsureya.com
-- Home Server: https://www.itsureya.com
+- Home Server: https://me.itsureya.com
 - Cloudflare Pages: https://about.itsureya.com
 
 ## 🐋 Docker:
