@@ -7,7 +7,8 @@
 ---
 
 > [!NOTE]
-> Still under construction.
+> - Still under construction.
+> - This is a clone of my main repository made in 2022. I had to private it due to privacy reasons.
 
 ## Instances:
 
