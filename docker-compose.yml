@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  website:
+    image: nginx:latest
+    container_name: portfolio
+    volumes:
+      - ./:/usr/share/nginx/html
+    ports:
+      - "8888:80"
+    restart: always
+    networks:
+      - portfolio
+
+  api:
+    image: itsureyaa/lastfm-api:latest
+    container_name: lastfm-api
+    ports:
+      - "3000:3000"
+    environment:
+      - LASTFM_USER=${LASTFM_USER}
+      - LASTFM_API_KEY=${LASTFM_API_KEY}
+    networks:
+      - portfolio
+    restart: always
+
+networks:
+  portfolio:
+    driver: bridge
