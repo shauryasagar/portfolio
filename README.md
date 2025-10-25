@@ -1,6 +1,6 @@
 # Portfolio
 <div align="center">
-  <img src="https://cdn.itsureya.com/images/icon.ico" alt="Icon">
+  <img src="https://r2.itsureya.com/images/icon.ico" alt="Icon">
 </div>
 <p align="center"><b>Since 2022 and continuing...</b></p>
 
@@ -45,5 +45,5 @@ Most time spent on centering div.
 
 ---
 <div align="center">
-<img style="display: block;" height="60px" src="https://cdn.itsureya.com/images/nyann.gif" alt="">
+<img style="display: block;" height="60px" src="https://r2.itsureya.com/images/nyann.gif" alt="">
 </div>
