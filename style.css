@@ -270,6 +270,38 @@ ul ul {
     padding-right: 15px;
 }
 
+.marquee-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+    padding-bottom: 10px;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+}
+/* THIS IS YOUR NEW CSS */
+.scroll-left {
+    animation: scroll-left linear infinite;
+}
+
+.scroll-right {
+    animation: scroll-right linear infinite;
+}
+
 .container:after,
 .container:before {
     content: " ";

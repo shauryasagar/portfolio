@@ -85,6 +85,29 @@ function handleBackgroundVideo() {
   }
 }
 
+function setMarqueeSpeed() {
+  const pixelsPerSecond = 300;
+
+  const images = document.querySelectorAll(".scroll-left, .scroll-right");
+
+  images.forEach((img) => {
+    const viewportWidth = window.innerWidth;
+
+    const imageWidth = img.offsetWidth || 150;
+
+    const totalDistance = viewportWidth + imageWidth;
+
+    const duration = totalDistance / pixelsPerSecond;
+
+    img.style.animationDuration = duration + "s";
+  });
+}
+
+window.addEventListener("load", setMarqueeSpeed);
+
+// Re-calculate speed if the window is resized
+window.addEventListener("resize", setMarqueeSpeed);
+
 handleBackgroundVideo();
 
 window.addEventListener("resize", handleBackgroundVideo);
