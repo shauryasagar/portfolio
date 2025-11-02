@@ -105,7 +105,6 @@ function setMarqueeSpeed() {
 
 window.addEventListener("load", setMarqueeSpeed);
 
-// Re-calculate speed if the window is resized
 window.addEventListener("resize", setMarqueeSpeed);
 
 handleBackgroundVideo();
