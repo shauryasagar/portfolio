@@ -21,7 +21,7 @@
 simply run:
 
 ```
-git clone https://github.com/shauryasagar/portfolio
+git clone https://github.com/shauryasagar/portfolio && cd portfolio
 docker compose up -d
 ```
 
@@ -31,6 +31,7 @@ docker compose up -d
 Running on Oracle Clound Instance, https://api.itsureya.com/lastfm
 
 - By default, **lastfm-api** container runs on port _3000_.
+  - Edit docker environment variable "PORT", to change it.
   - Edit script.js accordingly.
 - **.env** stores username and api-key.
 
