@@ -647,6 +647,9 @@ body {
 
 #trackartist {
     font-size: 15px;
+    text-shadow:
+        0 0 1px white,
+        0 0 1px white;
 }
 
 #tothelink {
@@ -1276,7 +1279,7 @@ h3,
     }
 
     #tracktitle {
-        font-size: 17px;
+        font-size: 18px;
     }
 
     .grooving {
@@ -1297,7 +1300,7 @@ h3,
     }
 
     #trackartist {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .main-Cover-about {
