@@ -39,7 +39,7 @@ Running on Oracle Clound Instance, https://api.itsureya.com/lastfm
 
 ## Bugs:
 
-- Main Background image snaps to different dimension when URL-bar collapses. (mobile)
+- ~~Main Background image snaps to different dimension when URL-bar collapses. (mobile)~~ **FIXED**
 
 ### Trivia:
 Most time spent on centering div.
