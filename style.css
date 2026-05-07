@@ -505,7 +505,7 @@ h3,
 }
 
 .main-Cover-about {
-    background-image: url(https://r2.itsureya.com/images/about.webp);
+    background-image: url(https://get.itsureya.com/images/about.webp);
     background-attachment: fixed;
     position: relative;
     width: 100%;
@@ -939,7 +939,7 @@ ul li:nth-child(13) {
     }
 
     .main-Cover-about {
-        background-image: url(https://r2.itsureya.com/images/about.webp);
+        background-image: url(https://get.itsureya.com/images/about.webp);
     }
 
     .playlist {
